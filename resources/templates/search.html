@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contacts </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" />
+</head>
+
+
+<form action="#" th:action="@{/searchName}">
+	Search Name: <input type="text" name="name" />
+	Search Phone Number: <input type="text" name="phoneNumber" />
+	<input type="submit" value="Search" />
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Address</th>
+     <th scope="col">Email</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <tr th:each="person:${myperson}">
+		<td th:text="${person.name}"></td>
+		<td th:text="${person.phoneNumber}"></td>
+		<td th:text="${person.address}"></td>
+		<td th:text="${person.email}"></td>
+	</tr>
+      
+  </tbody>
+</table>
+
+
+          
+</body>
+
+</html>
